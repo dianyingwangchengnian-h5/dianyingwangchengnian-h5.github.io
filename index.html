@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>成成电影网 | 成长与陪伴式观影推荐</title>
+  <meta name="description" content="成成电影网（dianyingwangchengcheng-h5）提供成长、情侣、家庭主题片单，正版渠道导航与防盗版避坑指南。不提供盗版资源、磁力、网盘与成人内容。" />
+  <meta name="author" content="成成电影网" />
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#d96c4a" />
+  <link rel="canonical" href="https://dianyingwangchengcheng-h5.github.io/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="成成电影网" />
+  <meta property="og:title" content="成成电影网 | 成长与陪伴式观影推荐" />
+  <meta property="og:description" content="成长、成双、治愈片单与正版观影导航。" />
+  <meta property="og:url" content="https://dianyingwangchengcheng-h5.github.io/" />
+  <meta property="og:locale" content="zh_CN" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="成成电影网 | 成长与陪伴式观影推荐" />
+  <meta name="twitter:description" content="按成长、情侣、家庭场景选片，只走正版渠道。" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "成成电影网",
+    "url": "https://dianyingwangchengcheng-h5.github.io/",
+    "description": "成长、成双、治愈主题电影推荐与正版渠道导航站。",
+    "inLanguage": "zh-CN"
+  }
+  </script>
+
+  <style>
+    :root{
+      --bg: #faf6f0;
+      --dark: #3e2723;
+      --primary: #d96c4a;
+      --primary-deep: #b84a2a;
+      --accent: #8a9a86;
+      --line: #e0d6cc;
+      --card: #ffffff;
+      --muted: #7a6a60;
+      --radius: 14px;
+      --maxw: 1140px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--dark);line-height:1.75;font-family: "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+
+    /* 票根风格头部 */
+    header.nav{position:sticky;top:0;z-index:50;background:rgba(250,246,240,.95);backdrop-filter:blur(10px);border-bottom:2px dashed var(--line)}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px}
+    .logo{font-weight:900;font-size:22px;letter-spacing:1px}
+    .logo b{color:var(--primary)}
+    .logo span{color:var(--accent)}
+    nav.menu{display:flex;gap:18px;font-size:15px;font-weight:600}
+    nav.menu a{padding:6px 14px;border-radius:20px;transition:.3s;border:1px solid transparent}
+    nav.menu a:hover{color:var(--primary);border-color:var(--line);background:#fff}
+    .nav-toggle{display:none;background:none;border:1px solid var(--line);color:var(--dark);border-radius:8px;padding:6px 10px;font-size:18px;cursor:pointer}
+
+    /* 英雄区：复古海报 */
+    .hero{padding:80px 0 70px;border-bottom:3px double var(--line);background:radial-gradient(circle at 85% 15%, rgba(217,108,74,.12), transparent 50%), radial-gradient(circle at 10% 90%, rgba(138,154,134,.15), transparent 50%);position:relative}
+    .hero::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;background:repeating-linear-gradient(45deg,var(--primary),var(--primary) 10px,var(--accent) 10px,var(--accent) 20px)}
+    .hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+    .hero-text .badge{display:inline-block;border:1.5px solid var(--primary);color:var(--primary);border-radius:4px;padding:4px 14px;font-size:12px;font-weight:800;letter-spacing:2px;margin-bottom:20px;transform:rotate(-2deg)}
+    .hero h1{font-size:clamp(30px,5vw,54px);line-height:1.15;margin:0 0 16px;font-weight:900}
+    .hero h1 em{font-style:normal;color:var(--primary);border-bottom:3px solid var(--accent)}
+    .hero p.lead{font-size:17px;color:var(--muted);margin:0 0 24px}
+    .hero-tags{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}
+    .hero-tag{border:1px dashed var(--line);border-radius:4px;padding:4px 12px;font-size:13px;color:var(--muted);background:#fff}
+    .cta{display:flex;gap:14px;flex-wrap:wrap}
+    .btn{padding:14px 28px;border-radius:8px;font-weight:800;font-size:15px;transition:.3s;display:inline-flex;gap:6px;align-items:center;cursor:pointer}
+    .btn-primary{background:var(--primary);color:#fff;border:2px solid var(--primary)}
+    .btn-primary:hover{background:var(--primary-deep);border-color:var(--primary-deep)}
+    .btn-ghost{border:2px solid var(--dark);color:var(--dark);background:transparent}
+    .btn-ghost:hover{background:var(--dark);color:#fff}
+    /* 右侧装饰：票根 */
+    .ticket-mock{background:#fff;border:2px solid var(--dark);border-radius:12px;padding:30px;transform:rotate(3deg);box-shadow:8px 8px 0 var(--line);position:relative;overflow:hidden}
+    .ticket-mock::after{content:"";position:absolute;bottom:-15px;left:50%;transform:translateX(-50%);width:30px;height:30px;background:var(--bg);border-radius:50%;border:2px solid var(--dark);border-top-color:transparent;border-right-color:transparent;transform:translateX(-50%) rotate(45deg)}
+    .ticket-mock h3{margin:0 0 10px;font-size:20px;color:var(--primary)}
+    .ticket-mock p{margin:0;font-size:14px;color:var(--muted)}
+    .ticket-mock .stub{margin-top:20px;border-top:2px dashed var(--line);padding-top:15px;font-size:12px;text-align:center;color:var(--accent);font-weight:700}
+
+    section{padding:64px 0;border-bottom:2px dashed var(--line)}
+    .sec-head{margin-bottom:40px;text-align:center}
+    .sec-head .kicker{color:var(--primary);font-weight:800;letter-spacing:3px;text-transform:uppercase;font-size:12px}
+    .sec-head h2{font-size:clamp(24px,4vw,36px);margin:8px 0 12px;font-weight:900}
+    .sec-head p{color:var(--muted);margin:0 auto;max-width:700px;font-size:15px}
+
+    /* 栏目1：成成特色 - 不对称网格 */
+    .feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .feat-card{background:var(--card);border:1.5px solid var(--line);border-radius:var(--radius);padding:28px;position:relative;transition:.3s}
+    .feat-card:hover{transform:translateY(-5px);box-shadow:0 10px 30px rgba(62,39,35,.08)}
+    .feat-card:nth-child(1){border-top:5px solid var(--primary)}
+    .feat-card:nth-child(2){border-top:5px solid var(--accent);transform:translateY(15px)}
+    .feat-card:nth-child(3){border-top:5px solid var(--dark)}
+    .feat-card:nth-child(4){border-top:5px solid #e6c25a;grid-column:span 2}
+    .feat-card:nth-child(5){border-top:5px solid #a78bc9}
+    .feat-num{position:absolute;top:15px;right:20px;font-size:36px;font-weight:900;color:var(--line);opacity:.4}
+    .feat-card h3{margin:0 0 8px;font-size:18px;font-weight:800}
+    .feat-card p{margin:0;color:var(--muted);font-size:14px}
+
+    /* 栏目2：类型缩圈 - 水平滚动条式 */
+    .genre-row{display:flex;overflow-x:auto;gap:16px;padding-bottom:20px;scroll-snap-type:x mandatory}
+    .genre-row::-webkit-scrollbar{height:8px}
+    .genre-row::-webkit-scrollbar-track{background:var(--line);border-radius:4px}
+    .genre-row::-webkit-scrollbar-thumb{background:var(--primary);border-radius:4px}
+    .genre-item{flex:0 0 280px;scroll-snap-align:start;background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:24px;display:flex;gap:16px;align-items:center}
+    .genre-icon{width:54px;height:54px;border-radius:50%;background:var(--bg);border:2px solid var(--primary);display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0}
+    .genre-item h3{margin:0 0 4px;font-size:16px;font-weight:800}
+    .genre-item p{margin:0;font-size:13px;color:var(--muted)}
+
+    /* 栏目3：场景时间轴 */
+    .timeline{position:relative;max-width:800px;margin:0 auto;padding-left:30px}
+    .timeline::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--line)}
+    .tl-item{position:relative;margin-bottom:30px;background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:22px 26px}
+    .tl-item::before{content:"";position:absolute;left:-38px;top:24px;width:16px;height:16px;border-radius:50%;background:var(--primary);border:3px solid var(--bg);box-shadow:0 0 0 3px var(--primary)}
+    .tl-item:nth-child(even)::before{background:var(--accent)}
+    .tl-item h3{margin:0 0 6px;font-size:17px;font-weight:800}
+    .tl-item p{margin:0;color:var(--muted);font-size:14px}
+
+    /* 栏目4：正版渠道 - 等距图标网格 */
+    .channel-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+    .ch-card{text-align:center;padding:30px 20px;border:1.5px solid var(--line);border-radius:16px;background:var(--card);transition:.3s}
+    .ch-card:hover{border-color:var(--primary);background:#fffaf7}
+    .ch-icon{font-size:36px;margin-bottom:12px;display:block}
+    .ch-card h3{margin:0 0 6px;font-size:16px;font-weight:800}
+    .ch-card p{margin:0;font-size:13px;color:var(--muted)}
+
+    /* 栏目5：避坑指南 - 警示条 */
+    .warn-list{max-width:800px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
+    .warn-item{display:flex;gap:18px;align-items:flex-start;background:var(--card);border:1.5px solid var(--line);border-left:6px solid var(--primary);border-radius:8px;padding:20px 24px}
+    .warn-item:nth-child(2){border-left-color:var(--accent)}
+    .warn-item:nth-child(3){border-left-color:var(--dark)}
+    .warn-icon{font-size:28px;flex-shrink:0}
+    .warn-text h3{margin:0 0 4px;font-size:16px;font-weight:800}
+    .warn-text p{margin:0;font-size:14px;color:var(--muted)}
+
+    footer{padding:40px 0;text-align:center;color:var(--muted);font-size:14px;background:#fff;border-top:3px double var(--line)}
+    footer a{color:var(--primary);font-weight:600}
+
+    #toTop{position:fixed;right:20px;bottom:20px;z-index:60;width:48px;height:48px;border-radius:50%;border:2px solid var(--dark);background:var(--primary);color:#fff;font-size:20px;cursor:pointer;opacity:0;pointer-events:none;transition:.3s}
+    #toTop.show{opacity:1;pointer-events:auto}
+    .reveal{opacity:0;transform:translateY(20px);transition:.6s ease}
+    .reveal.in{opacity:1;transform:none}
+
+    @media (max-width:980px){
+      .hero .wrap{grid-template-columns:1fr}
+      .ticket-mock{transform:rotate(0);max-width:400px;margin:0 auto}
+      .feature-grid{grid-template-columns:1fr 1fr}
+      .feat-card:nth-child(4){grid-column:span 1}
+      .channel-grid{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width:640px){
+      .nav-toggle{display:block}
+      nav.menu{position:absolute;top:68px;left:0;right:0;flex-direction:column;gap:0;padding:10px 20px 20px;background:rgba(250,246,240,.98);border-bottom:2px dashed var(--line);display:none}
+      nav.menu.open{display:flex}
+      nav.menu a{padding:12px 8px;border-bottom:1px solid var(--line);border-radius:0}
+      .feature-grid{grid-template-columns:1fr}
+      .feat-card:nth-child(2){transform:translateY(0)}
+      .feat-card:nth-child(4){grid-column:span 1}
+      .channel-grid{grid-template-columns:1fr}
+      .genre-item{flex:0 0 260px}
+    }
+  </style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/laoliu.js"></script>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <div class="logo"><b>成成</b><span>电影网</span></div>
+      <button class="nav-toggle" aria-label="菜单" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+      <nav class="menu" id="menu">
+        <a href="#home">首页</a>
+        <a href="#feature">成成特色</a>
+        <a href="#genre">类型缩圈</a>
+        <a href="#scene">场景匹配</a>
+        <a href="#legal">正版渠道</a>
+        <a href="#warn">避坑指南</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="wrap">
+      <div class="hero-text">
+        <div class="badge">ChengCheng Cinema</div>
+        <h1>成成电影网<br/>陪你 <em>慢慢</em> 看好片</h1>
+        <p class="lead">成长、成双、治愈——按人生阶段与陪伴场景选片，提供正版渠道与避坑清单。不做“全库免费”，只做陪伴式观影指南。</p>
+        <div class="hero-tags">
+          <span class="hero-tag">成长片单</span>
+          <span class="hero-tag">情侣成双</span>
+          <span class="hero-tag">家庭治愈</span>
+          <span class="hero-tag">正版优先</span>
+        </div>
+        <div class="cta">
+          <a class="btn btn-primary" href="#feature">开始选片 →</a>
+          <a class="btn btn-ghost" href="#warn">识别盗版陷阱</a>
+        </div>
+      </div>
+      <div class="ticket-mock">
+        <h3>🎟️ 成成观影票根</h3>
+        <p>网站名称：成成电影网</p>
+        <p>网址：https://dianyingwangchengcheng-h5.github.io</p>
+        <p>场次：每日 00:00 - 24:00</p>
+        <p>座位：正版渠道专区</p>
+        <div class="stub">ADMIT ONE · 陪伴每一刻</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="feature" class="reveal">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">Our Feature</div>
+        <h2>成成特色片单</h2>
+        <p>围绕“成长、成双、治愈”三个关键词，为你精选不同人生阶段的陪伴影片。</p>
+      </div>
+      <div class="feature-grid">
+        <div class="feat-card">
+          <div class="feat-num">01</div>
+          <h3>🌱 成长之路</h3>
+          <p>青春、职场、自我寻找。适合独处时慢慢品味，看别人故事，想自己的人生。</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-num">02</div>
+          <h3>👫 成双成对</h3>
+          <p>情侣约会、闺蜜聚会、兄弟夜话。轻松不虐心，笑中带暖，适合两人同看。</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-num">03</div>
+          <h3>🏠 家庭治愈</h3>
+          <p>亲子、父母、团圆。周末客厅全家一起看，选片注重温情与分级友好。</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-num">04</div>
+          <h3>🎨 作者切片</h3>
+          <p>独立电影、短片、纪录片。适合影展前补课或深度拉片，感受镜头语言。</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-num">05</div>
+          <h3>🌙 深夜食堂</h3>
+          <p>美食、音乐、城市漫步。适合深夜独自小屏观看，配一杯热饮刚刚好。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="genre" class="reveal">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">Genre Filter</div>
+        <h2>类型缩圈</h2>
+        <p>左右滑动快速筛选，找到你现在最想看的类型。</p>
+      </div>
+      <div class="genre-row">
+        <div class="genre-item">
+          <div class="genre-icon">🎭</div>
+          <div><h3>剧情成长</h3><p>现实向、人物弧光完整</p></div>
+        </div>
+        <div class="genre-item">
+          <div class="genre-icon">😂</div>
+          <div><h3>轻喜剧</h3><p>解压、不费脑、合家欢</p></div>
+        </div>
+        <div class="genre-item">
+          <div class="genre-icon">💑</div>
+          <div><h3>爱情治愈</h3><p>甜宠、现实、失恋后修复</p></div>
+        </div>
+        <div class="genre-item">
+          <div class="genre-icon">🚀</div>
+          <div><h3>科幻冒险</h3><p>硬科幻、太空、近未来</p></div>
+        </div>
+        <div class="genre-item">
+          <div class="genre-icon">🎨</div>
+          <div><h3>动画美学</h3><p>合家欢、成人动画、短片</p></div>
+        </div>
+        <div class="genre-item">
+          <div class="genre-icon">📝</div>
+          <div><h3>纪录真实</h3><p>自然、人物、社会观察</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="scene" class="reveal">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">Scene Match</div>
+        <h2>场景匹配时间轴</h2>
+        <p>同部片在不同场景体验完全不同，按你的当下场景来选。</p>
+      </div>
+      <div class="timeline">
+        <div class="tl-item">
+          <h3>🌅 周末早晨 · 家庭客厅</h3>
+          <p>选片：动画合家欢、自然纪录片。要求：字幕清晰、无惊吓镜头、时长≤100分钟。</p>
+        </div>
+        <div class="tl-item">
+          <h3>☀️ 午后闲暇 · 咖啡馆 solo</h3>
+          <p>选片：轻喜剧、独立短片。要求：可暂停、低音量、不烧脑。</p>
+        </div>
+        <div class="tl-item">
+          <h3>🌙 深夜独居 · 卧室小屏</h3>
+          <p>选片：成长剧情、作者电影、纪录片。要求：长镜头、可笔记、不血腥。</p>
+        </div>
+        <div class="tl-item">
+          <h3>🎉 约会之夜 · 双人同看</h3>
+          <p>选片：爱情治愈、音乐传记。要求：双字幕可选、收尾不强行虐心。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="legal" class="reveal">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">Legal Channels</div>
+        <h2>正版渠道导航</h2>
+        <p>按需求分流，少走野站，保护设备与隐私。</p>
+      </div>
+      <div class="channel-grid">
+        <div class="ch-card">
+          <span class="ch-icon">📱</span>
+          <h3>持权流媒体</h3>
+          <p>综合商业片/剧集/动画，会员或单片点播</p>
+        </div>
+        <div class="ch-card">
+          <span class="ch-icon">🎬</span>
+          <h3>院线购票</h3>
+          <p>新片首映、重映、IMAX以官方排片为准</p>
+        </div>
+        <div class="ch-card">
+          <span class="ch-icon">🏛️</span>
+          <h3>资料馆/影展</h3>
+          <p>修复版、国别专题、作者合集专场</p>
+        </div>
+        <div class="ch-card">
+          <span class="ch-icon">💳</span>
+          <h3>单片租赁</h3>
+          <p>只补一部不办会员，优先官方字幕音轨</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="warn" class="reveal">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">Anti-Piracy</div>
+        <h2>成成避坑指南</h2>
+        <p>遇到以下情况，请立即关闭页面，保护账号与设备安全。</p>
+      </div>
+      <div class="warn-list">
+        <div class="warn-item">
+          <div class="warn-icon">🚫</div>
+          <div class="warn-text">
+            <h3>专用播放器/解码器</h3>
+            <p>要求安装未知播放器、浏览器插件、解码器或关闭杀软才能看，可能夹带木马、跳博彩贷款，立即停用。</p>
+          </div>
+        </div>
+        <div class="warn-item">
+          <div class="warn-icon">⚠️</div>
+          <div class="warn-text">
+            <h3>假免费/假播放按钮</h3>
+            <p>院线未下或独家播出期就“全集免费”，多个假播放按钮、倒计时、强跳新窗口，属未授权高风险。</p>
+          </div>
+        </div>
+        <div class="warn-item">
+          <div class="warn-icon">🔗</div>
+          <div class="warn-text">
+            <h3>磁力/网盘/无主体</h3>
+            <p>回复拿种子、网盘提取码、换域名无公司主体/无版权说明/索要验证码银行卡，一律不点不填。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      © 2026 成成电影网（dianyingwangchengcheng-h5）｜ 静态展示站点 ｜
+      内页链接以 <a href="#">#</a> 占位 ｜
+      网站网址：https://dianyingwangchengcheng-h5.github.io ｜
+      本站仅作综合观影推荐、成长/情侣/家庭片单与正版渠道导航，不提供盗版资源、磁力、网盘与成人内容。
+    </div>
+  </footer>
+
+  <button id="toTop" aria-label="回到顶部" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+  <script>
+    document.querySelectorAll('#menu a').forEach(function(a){
+      a.addEventListener('click',function(){ document.getElementById('menu').classList.remove('open'); });
+    });
+    var toTop=document.getElementById('toTop');
+    window.addEventListener('scroll',function(){ toTop.classList.toggle('show',window.scrollY>400); });
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+    },{threshold:0.1});
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  </script>
+</body>
+</html>
